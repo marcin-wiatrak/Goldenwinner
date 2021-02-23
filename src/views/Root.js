@@ -3,6 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
 import Navbar from 'components/Layouts/Navbar/Navbar';
+import Ranking from 'components/Layouts/Navbar/Ranking/Ranking';
+import Container from 'components/Layouts/Container/Container';
 
 const Wrapper = styled.div`
     display: flex;
@@ -18,7 +20,9 @@ const App = () => (
         <GlobalStyle />
         <Navbar />
         <Wrapper>
-            <h1>Global style</h1>
+            <Container title="Ranking">
+                <Ranking />
+            </Container>
         </Wrapper>
     </ThemeProvider>
 );

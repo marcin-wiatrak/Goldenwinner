@@ -10,10 +10,10 @@ export const theme = {
     },
     fontSize: {
         xxl: '24px',
-        xl: '14px',
-        l: '12px',
-        m: '10px',
-        s: '8px',
+        xl: '18px',
+        l: '15px',
+        m: '13px',
+        s: '10px',
     },
     headerGradient: 'linear-gradient(270deg, #141414 0%, #1B1B1B 100%);',
 };
