@@ -7,9 +7,10 @@ Every player authorised with Facebook or Google account (firebase). Starting wit
 - Firebase (realtime db)
 
 ## Instalation
-- npm install
-- npm start
-
+`````
+> npm install
+> npm start
+`````
 ## Changelog
 
 `````
