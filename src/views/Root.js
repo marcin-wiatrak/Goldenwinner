@@ -6,6 +6,7 @@ import Navbar from 'components/Layouts/Navbar/Navbar';
 import Ranking from 'components/Ranking/Ranking';
 import Container from 'components/Layouts/Container/Container';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Homepage from './Homepage/Homepage';
 
 const Wrapper = styled.div`
     display: flex;
@@ -24,6 +25,9 @@ const App = () => (
             <Wrapper>
                 <Switch>
                     <Route path="/" exact>
+                        <Homepage />
+                    </Route>
+                    <Route path="/luckycase">
                         <Container title="Ranking">
                             <Ranking />
                         </Container>

@@ -1,7 +1,5 @@
-import { theme } from 'assets/styles/theme';
 import React from 'react';
-import { NavLink, Router } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ListWrapper = styled.ul`
@@ -67,7 +65,7 @@ const ListWrapper = styled.ul`
 const Navigation = (props) => (
     <ListWrapper>
         <li>
-            <NavLink exact activeClassName="active" to="/">
+            <NavLink exact activeClassName="active" to="/luckycase">
                 Lucky case
             </NavLink>
         </li>
@@ -83,7 +81,5 @@ const Navigation = (props) => (
         </li>
     </ListWrapper>
 );
-
-// Navigation.propTypes = {};
 
 export default Navigation;
