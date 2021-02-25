@@ -1,4 +1,4 @@
-import CurrencySpan from 'components/Layouts/CurrencySpan/CurrencySpan';
+import CurrencySpan from 'components/CurrencySpan/CurrencySpan';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -28,7 +28,7 @@ const RankingListItem = (props) => (
         <p>{props.index}.</p>
         <p>{props.name}</p>
         <p>
-            {props.amount}
+            {props.amount.toFixed(2)}
             <CurrencySpan />
         </p>
     </Li>
