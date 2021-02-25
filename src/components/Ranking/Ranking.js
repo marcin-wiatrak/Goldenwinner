@@ -20,7 +20,7 @@ const Ranking = (props) => {
                     <RankingListItem
                         key={index + 1}
                         index={index + 1}
-                        name={item.name}
+                        name={item.playerName}
                         amount={item.amount}
                     />
                 ))}
