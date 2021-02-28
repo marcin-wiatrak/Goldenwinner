@@ -2,23 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-    width: 350px;
-    border: 1px solid ${({ theme }) => theme.colors.borderBox};
-    background-color: ${({ theme }) => theme.colors.graphite};
-    box-shadow: 0px 0px 40px 10px rgba(204, 204, 204, 0.05);
-`;
-
 const Heading = styled.header`
     width: 100%;
-    height: 50px;
+    height: 80px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: ${({ theme }) => theme.headerGradient};
-    font-size: ${({ theme }) => theme.fontSize.xl};
     text-transform: uppercase;
+    font-size: ${({ theme }) => theme.fontSize.xxl};
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 const HorizontalLine = styled.span`
@@ -26,22 +20,33 @@ const HorizontalLine = styled.span`
     bottom: 0;
     height: 2px;
     width: 100%;
-    background: linear-gradient(90deg, #2f2f2f 0%, #7a7a7a 50%, #2f2f2f 100%);
+    background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Content = styled.div`
     padding: 15px;
 `;
 
-const Container = (props) => (
-    <Wrapper>
-        <Heading>
-            {props.title}
-            <HorizontalLine />
-        </Heading>
-        <Content>{props.children}</Content>
-    </Wrapper>
-);
+const Wrapper = styled.div`
+    width: ${(props) => (props.width ? props.width : '350px')};
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
+const Container = (props) => {
+    return (
+        <Wrapper width={props.width}>
+            <Heading>
+                {props.title}
+                <HorizontalLine />
+            </Heading>
+            <Content>{props.children}</Content>
+        </Wrapper>
+    );
+};
 
 Container.propTypes = {};
 
