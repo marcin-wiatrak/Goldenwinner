@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Login from 'components/Login/Login';
-import { firebaseApp } from '../../firebase';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from 'assets/images/logo_export.svg';
 

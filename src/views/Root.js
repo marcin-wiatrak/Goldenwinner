@@ -1,18 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
-import Ranking from 'components/Ranking/Ranking';
-import Container from 'components/Layouts/Container/Container';
-import {
-    Route,
-    BrowserRouter as Router,
-    Switch,
-    Redirect,
-} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Homepage from './Homepage/Homepage';
 import Game from './Game/Game';
 import { firebaseApp } from '../firebase';
+import LuckyChests from './Game/LuckyChests/LuckyChests';
+import Boxwars from './Game/Boxwars/Boxwars';
+import LuckyDice from './Game/LuckyDice/LuckyDice';
 
 const Wrapper = styled.div`
     display: flex;
@@ -20,7 +17,6 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 100vh;
-    color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
 const Root = () => {
@@ -69,7 +65,10 @@ const Root = () => {
                     <Switch>
                         <Route path="/" exact>
                             {user ? (
-                                <Game handleLogout={handleLogout} />
+                                <Game
+                                    handleLogout={handleLogout}
+                                    gameComponent="playerPanel"
+                                />
                             ) : (
                                 <Homepage
                                     user={user}
@@ -88,17 +87,20 @@ const Root = () => {
                                 />
                             )}
                         </Route>
-                        <Route path="/game" component={Game} />
-                        <Route path="/game/luckycase">
-                            <Container title="Ranking">
-                                <Ranking />
-                            </Container>
+                        <Route path="/luckychests">
+                            <Game>
+                                <LuckyChests />
+                            </Game>
                         </Route>
-                        <Route path="/game/boxwar">
-                            <h1>W budowie</h1>
+                        <Route path="/boxwars">
+                            <Game>
+                                <Boxwars />
+                            </Game>
                         </Route>
-                        <Route path="/game/dices">
-                            <h1>Już wkrótce</h1>
+                        <Route path="/luckydice">
+                            <Game>
+                                <LuckyDice />
+                            </Game>
                         </Route>
                     </Switch>
                 </Wrapper>

@@ -1,10 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+import GameHeader from './GameHeader/GameHeader';
 
-const Game = ({ handleLogout }) => (
-    <div>
-        <h3>Game works</h3>
-        <button onClick={handleLogout}>Logout</button>
-    </div>
-);
+const Wrapper = styled.section`
+    position: relative;
+    background: ${({ theme }) => theme.colors.blue1};
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(
+        -15deg,
+        #001845 0%,
+        #001233 50%,
+        #023e7d 50%,
+        #023e7d 100%
+    );
+`;
+
+const Game = ({ handleLogout, gameComponent, children }) => {
+    return (
+        <Wrapper>
+            <GameHeader />
+            {children}
+        </Wrapper>
+    );
+};
 
 export default Game;
