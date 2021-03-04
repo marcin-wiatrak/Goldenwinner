@@ -1,12 +1,11 @@
 /* eslint-disable default-case */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 // import { Link } from '@reach/router';
 import Container from 'components/Layouts/Container/Container';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { auth, signInWithGoogle, firebaseApp } from '../../firebase';
+import { signInWithGoogle, firebaseApp } from '../../firebase';
 
 const Form = styled.form`
     padding: 15px;
@@ -114,7 +113,6 @@ const AlreadyRegisteredParagraph = styled.p`
 const Login = (props) => {
     const {
         user,
-        setUser,
         email,
         setEmail,
         password,
@@ -203,7 +201,7 @@ const Login = (props) => {
                         <Button onClick={(event) => handleLogin(event)}>
                             Zaloguj się
                         </Button>
-                        <AlreadyRegisteredParagraph>
+                        <AlreadyRegisteredParagraph key={1}>
                             Nie masz jeszcze konta?{' '}
                             <span onClick={hasAccountHandler}>
                                 Zarejestruj się!
@@ -215,7 +213,7 @@ const Login = (props) => {
                         <Button onClick={(event) => handleRegister(event)}>
                             Zarejestruj
                         </Button>
-                        <AlreadyRegisteredParagraph>
+                        <AlreadyRegisteredParagraph key={2}>
                             Posiadasz już konto?{' '}
                             <span onClick={hasAccountHandler}>
                                 Zaloguj się!
