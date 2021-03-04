@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import bg from 'assets/images/bg_dark.png';
 
 export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
@@ -16,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Montserrat', sans-serif;
-        background: url(${bg});
     }
 
     a, button {
